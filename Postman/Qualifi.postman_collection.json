@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "78b28b64-5659-4c23-925a-adfb2997d19f",
+		"name": "Qualifi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11124285"
+	},
+	"item": [
+		{
+			"name": "Prequalification Returns Success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Mr\",\r\n    \"firstName\": \"Stephen\",\r\n    \"lastName\": \"Wond\",\r\n    \"dateOfBirth\": \"2023-10-15\",\r\n    \"salary\": 25000,\r\n    \"address\": {\r\n        \"addressLine1\": \"Buckingham Palace\",\r\n        \"townCity\": \"London\",\r\n        \"county\": \"London\",\r\n        \"postcode\": \"SW1A 1AA\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7120/api/Prequalification",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7120",
+					"path": [
+						"api",
+						"Prequalification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prequalification Returns BadRequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": {\r\n        \"postcode\": \"12TN AD0\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7120/api/Prequalification",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7120",
+					"path": [
+						"api",
+						"Prequalification"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
