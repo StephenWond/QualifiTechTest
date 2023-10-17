@@ -1,13 +1,6 @@
-﻿body {
-Change Connection string
-create db
-seed db
-run application 
-Postman test avalible in testing project
-}
+To get running please perform the following steps:
 
-Questions:
-Are Creditcards loan products or are they two seperate entities?
-SQL server is different from SQLite, can either be used
-Seems heavy on the DB usage
-
+Update the connectionstring in the appsettings.json file
+Run the following command to generate and seed the database: dotnet ef database update
+Run the application locally
+Run the postman tests stored here: ..\QualifiTest\Postman\Qualifi.postman_collection.json
